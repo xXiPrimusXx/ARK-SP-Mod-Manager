@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>configDialog</class>
+ <widget class="QDialog" name="configDialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>623</width>
+    <height>352</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout_2">
+   <item>
+    <layout class="QVBoxLayout" name="verticalLayout">
+     <item>
+      <widget class="QTextEdit" name="configTextEdit">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="documentTitle">
+        <string/>
+       </property>
+       <property name="readOnly">
+        <bool>true</bool>
+       </property>
+       <property name="html">
+        <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Segoe UI'; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p align=&quot;justify&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:18pt;&quot;&gt;To configure this application please select your installation path for ARK (where you installed ARK with steam) and where you would like to save your mod profiles using the file browser (by clicking browse) or by entering the path in the text box.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="installLabel">
+       <property name="text">
+        <string>ARK Installation Path:</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="installLayout">
+       <item>
+        <widget class="QLineEdit" name="installLineEdit">
+         <property name="placeholderText">
+          <string>e.g. 'C:\Program Files (x86)\Steam\steamapps\common\ARK'</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="installBrowseBtn">
+         <property name="text">
+          <string>Browse</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <widget class="QLabel" name="profileLabel">
+       <property name="text">
+        <string>Profile Save Directory:</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="profileLayout">
+       <item>
+        <widget class="QLineEdit" name="profileLineEdit">
+         <property name="placeholderText">
+          <string>e.g. 'C:\Program Files (x86)\Ark Mod Profiles'</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="profileBrowseBtn">
+         <property name="text">
+          <string>Browse</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="controlLayout">
+       <item>
+        <widget class="QPushButton" name="acceptBtn">
+         <property name="text">
+          <string>Accept</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="cancelBtn">
+         <property name="text">
+          <string>Cancel</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>installBrowseBtn</sender>
+   <signal>released()</signal>
+   <receiver>configDialog</receiver>
+   <slot>browseInstallation()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>577</x>
+     <y>244</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>617</x>
+     <y>183</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>profileBrowseBtn</sender>
+   <signal>released()</signal>
+   <receiver>configDialog</receiver>
+   <slot>browseSave()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>577</x>
+     <y>303</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>618</x>
+     <y>274</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>acceptBtn</sender>
+   <signal>released()</signal>
+   <receiver>configDialog</receiver>
+   <slot>accept()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>238</x>
+     <y>336</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>350</x>
+     <y>345</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>cancelBtn</sender>
+   <signal>released()</signal>
+   <receiver>configDialog</receiver>
+   <slot>reject()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>491</x>
+     <y>333</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>510</x>
+     <y>348</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>browseInstallation()</slot>
+  <slot>browseSave()</slot>
+ </slots>
+</ui>
