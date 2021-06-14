@@ -5,7 +5,7 @@ from PySide6.QtCore import Slot, Signal
 
 class ConfigDialog(QDialog):
 
-    accepted = Signal(str, str)
+    accepted = Signal(str, str, bool)
     rejected = Signal()
 
     def __init__(self, parent=None):
@@ -23,5 +23,5 @@ class ConfigDialog(QDialog):
 
     @Slot()
     def accept(self):
-        self.accepted.emit(self.ui.installLineEdit.text(), self.ui.profileLineEdit.text())
+        self.accepted.emit(self.ui.installLineEdit.text(), self.ui.profileLineEdit.text(), True)
         super(ConfigDialog, self).accept()
